@@ -1,6 +1,6 @@
 const path = require('path');
 const myPlugin = require('./my-plugin/myPlugin');
-// const listenMyPlugin = require('./listenMyPlugin');
+const listenMyPlugin = require('./my-plugin/listenMyPlugin');
 
 module.exports = {
   mode: 'development',
@@ -12,8 +12,15 @@ module.exports = {
     }, {
       test: /\.js$/,
       use: [
-        'first.loader',
-        'pitch.test.loader',
+        {
+          loader: 'first.loader',
+          options: {
+            a: '123'
+          }
+        },
+        {
+          loader: 'pitch.test.loader'
+        },
       ]
     }]
   },
@@ -24,7 +31,7 @@ module.exports = {
   },
 
   plugins: [
-    // new myPlugin(),
-    // new listenMyPlugin()
+    new myPlugin(),
+    new listenMyPlugin()
   ]
 }

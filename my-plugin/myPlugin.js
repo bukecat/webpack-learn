@@ -17,7 +17,7 @@ class MyPlugin {
     compiler.hooks.myPlugin = new SyncHook(['data'])
     compiler.hooks.myPlugin2 = new SyncHook(['data'])
 
-    compiler.hooks.environment.tap('1', () => {
+    compiler.hooks.environment.tap('1123asda', () => {
       //广播自定义事件
       compiler.hooks.myPlugin.call("It's my plugin.");
       compiler.hooks.myPlugin2.call("It's my plugin2.")
@@ -30,12 +30,12 @@ class MyPlugin {
     // compilation.hooks.myPlugin.call("It's my plugin.")
     // });
 
-    compiler.hooks.myPlugin.tap('1', (data) => {
-      console.log('@Listen4Myplugin', data)
+    compiler.hooks.myPlugin.tap('asdazxcz1', (data) => {
+      console.log('@myPlugin', data)
     })
 
-    compiler.hooks.myPlugin2.tap('2', (data) => {
-      console.log('@Listen4Myplugin', data)
+    compiler.hooks.myPlugin2.tap('asdasd2', (data) => {
+      console.log('@myPlugin2', data)
     })
   }
 }
