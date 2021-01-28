@@ -1,9 +1,11 @@
 <template>
-  <div></div>
+  <div>123</div>
 </template>
 
 <script>
 
 </script>
 
-<test lang="test"></test>
+<style lang="test">
+  @import "./test.css";
+</style>
